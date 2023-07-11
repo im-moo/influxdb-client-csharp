@@ -1,4 +1,4 @@
-﻿@page "/"
+@page "/"
 @using ExampleBlazor.Data
 @using InfluxDB.Client.Api.Domain
 @using InfluxDB.Client.Core.Flux.Domain
@@ -209,7 +209,7 @@
         _client = new Client(InfluxModel.Client.Url, InfluxModel.Client.Token, InfluxModel.Client.Org);
         _bucketList = await InfluxModel.FetchBuckets();
 
-        if (_bucketList.FirstOrDefault(bucket => bucket.Name == "iot_center") != null) SelectedBucket = "iot_center";
+        if (_bucketList.FirstOrDefault(bucket => bucket.Name == "edge") != null) SelectedBucket = "edge";
     }
 
     #region ---------------------------- ClientSettings ----------------------------
@@ -407,8 +407,8 @@
         RefreshDevicesBusy = true;
         _bucketList = await InfluxModel.FetchBuckets();
         if (string.IsNullOrEmpty(SelectedBucket) &&
-            _bucketList.FirstOrDefault(bucket => bucket.Name == "iot_center") != null)
-            SelectedBucket = "iot_center";
+            _bucketList.FirstOrDefault(bucket => bucket.Name == "edge") != null)
+            SelectedBucket = "edge";
         RefreshDevicesBusy = false;
     }
 

@@ -13,8 +13,8 @@ public static class InfluxModel
     public static readonly Client Client = new()
     {
         Url = "http://localhost:8086",
-        Token = "my-token",
-        Org = "my-org"
+        Token = "\"Xd1qyycIP2h9-epxDyxlBIXyR8AVAFpT-mqdxbQNs5wYZ2NDt7ReGQDuZGUycioRB6dVF4ZJqeOTOHkZ5fFZ0A==\"",
+        Org = "top"
     };
 
     public static async Task<bool> CheckClient(Client? client)
